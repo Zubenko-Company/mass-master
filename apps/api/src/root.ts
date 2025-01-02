@@ -5,9 +5,6 @@ import { users } from "./router/users.js";
 import { createTRPCRouter } from "./trpc.js";
 
 export const appRouter = createTRPCRouter({
-  test: createTRPCRouter(test),
-  users: createTRPCRouter(users),
-  messages: createTRPCRouter(messages),
   token: createTRPCRouter(token),
 });
 

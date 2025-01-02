@@ -85,11 +85,7 @@ importers:
         version: 4.2.0
       typeorm:
         specifier: 0.3.17
-<<<<<<< Updated upstream
-        version: 0.3.17(mongodb@6.9.0(socks@2.8.3))(pg@8.13.1)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2))
-=======
         version: 0.3.17(mongodb@6.12.0(socks@2.8.3))(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.5))(@types/node@20.17.10)(typescript@5.7.2))
->>>>>>> Stashed changes
       winston:
         specifier: ^3.13.0
         version: 3.17.0
@@ -139,106 +135,9 @@ importers:
 
   apps/web:
     dependencies:
-<<<<<<< Updated upstream
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      informer-client:
-        specifier: ^1.0.4
-        version: 1.0.4
-      mongodb:
-        specifier: ^6.9.0
-        version: 6.9.0(socks@2.8.3)
-      reflect-metadata:
-        specifier: ^0.2.2
-        version: 0.2.2
-      remeda:
-        specifier: ^2.0.6
-        version: 2.14.0
-      sitka:
-        specifier: ^1.1.1
-        version: 1.1.1
-      telegraf:
-        specifier: 4.15.0
-        version: 4.15.0
-      typeorm:
-        specifier: 0.3.17
-        version: 0.3.17(mongodb@6.9.0(socks@2.8.3))(pg@8.13.1)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2))
-    devDependencies:
-      '@types/chai':
-        specifier: ^4.3.10
-        version: 4.3.20
-      '@types/mocha':
-        specifier: ^10.0.4
-        version: 10.0.8
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.16.5
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^5.61.0
-        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
-      '@typescript-eslint/parser':
-        specifier: ^5.61.0
-        version: 5.62.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
-      '@typescript-eslint/typescript-estree':
-        specifier: ^6.11.0
-        version: 6.21.0(typescript@5.6.2)
-      chai:
-        specifier: ^4.3.10
-        version: 4.5.0
-      conventional-changelog-cli:
-        specifier: ^3.0.0
-        version: 3.0.0
-      cz-conventional-changelog:
-        specifier: ^3.3.0
-        version: 3.3.0(@types/node@20.16.5)(typescript@5.6.2)
-      eslint:
-        specifier: ^9.2.0
-        version: 9.10.0(jiti@1.21.6)
-      eslint-plugin-prettier:
-        specifier: ^5.0.1
-        version: 5.2.1(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
-      mocha:
-        specifier: ^10.2.0
-        version: 10.7.3
-      nodemon:
-        specifier: ^3.1.0
-        version: 3.1.6
-      nyc:
-        specifier: ^15.1.0
-        version: 15.1.0
-      prettier:
-        specifier: ^3.2.5
-        version: 3.3.3
-      source-map-support:
-        specifier: ^0.5.21
-        version: 0.5.21
-      ts-node:
-        specifier: ^10.9.2
-        version: 10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2)
-      tsconfig-paths:
-        specifier: ^4.2.0
-        version: 4.2.0
-      typescript:
-        specifier: ^5.4.5
-        version: 5.6.2
-
-  apps/web:
-    dependencies:
-      next:
-        specifier: 14.2.13
-        version: 14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.79.3)
-      react:
-        specifier: ^18
-        version: 18.3.1
-      react-dom:
-        specifier: ^18
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.16.5
-=======
+      '@trpc/client':
+        specifier: ^10.45.2
+        version: 10.45.2(@trpc/server@10.45.2)
       bootstrap:
         specifier: ^5.3.3
         version: 5.3.3(@popperjs/core@2.11.8)
@@ -255,6 +154,9 @@ importers:
       '@eslint/js':
         specifier: ^9.15.0
         version: 9.17.0
+      '@mass-master/api':
+        specifier: workspace:*
+        version: link:../api
       '@mass-master/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
@@ -264,7 +166,6 @@ importers:
       '@mass-master/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
->>>>>>> Stashed changes
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.16
@@ -312,11 +213,7 @@ importers:
         version: 2.2.1
       typeorm:
         specifier: 0.3.17
-<<<<<<< Updated upstream
-        version: 0.3.17(mongodb@6.9.0(socks@2.8.3))(pg@8.13.1)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2))
-=======
         version: 0.3.17(mongodb@6.12.0(socks@2.8.3))(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.5))(@types/node@20.17.10)(typescript@5.7.2))
->>>>>>> Stashed changes
       zod:
         specifier: ^3.23.8
         version: 3.24.1
@@ -353,11 +250,7 @@ importers:
         version: 2.2.1
       typeorm:
         specifier: 0.3.17
-<<<<<<< Updated upstream
-        version: 0.3.17(mongodb@6.9.0(socks@2.8.3))(pg@8.13.1)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2))
-=======
         version: 0.3.17(mongodb@6.12.0(socks@2.8.3))(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.5))(@types/node@20.17.10)(typescript@5.7.2))
->>>>>>> Stashed changes
       zod:
         specifier: ^3.23.8
         version: 3.24.1
@@ -394,7 +287,7 @@ importers:
         version: 1.13.4(eslint@9.17.0(jiti@1.21.6))
       eslint-plugin-import:
         specifier: ^2.29.1
-        version: 2.31.0(eslint@9.17.0(jiti@1.21.6))
+        version: 2.31.0(@typescript-eslint/parser@7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.17.0(jiti@1.21.6))
       eslint-plugin-jsx-a11y:
         specifier: ^6.8.0
         version: 6.10.2(eslint@9.17.0(jiti@1.21.6))
@@ -1289,6 +1182,11 @@ packages:
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
+
+  '@trpc/client@10.45.2':
+    resolution: {integrity: sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg==}
+    peerDependencies:
+      '@trpc/server': 10.45.2
 
   '@trpc/server@10.45.2':
     resolution: {integrity: sha512-wOrSThNNE4HUnuhJG6PfDRp4L2009KDVxsd+2VYH8ro6o/7/jwYZ8Uu5j+VaW+mOmc8EHerHzGcdbGNQSAUPgg==}
@@ -3292,47 +3190,8 @@ packages:
     resolution: {integrity: sha512-GVlENSDW6KHaXcd9zkZltB7tCLosKB/4Hg0fqBJkAoBgYG2Tn1xtMgXtSUuMU9AK/gCm/tTdT8mgAeF4YNeeqw==}
     engines: {node: '>=14.16'}
 
-<<<<<<< Updated upstream
-  pg-cloudflare@1.1.1:
-    resolution: {integrity: sha512-xWPagP/4B6BgFO+EKz3JONXv3YDgvkbVrGw2mTo3D6tVDQRh1e7cqVGvyR3BE+eQgAvx1XhW/iEASj4/jCWl3Q==}
-
-  pg-connection-string@2.7.0:
-    resolution: {integrity: sha512-PI2W9mv53rXJQEOb8xNR8lH7Hr+EKa6oJa38zsK0S/ky2er16ios1wLKhZyxzD7jUReiWokc9WK5nxSnC7W1TA==}
-
-  pg-int8@1.0.1:
-    resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
-    engines: {node: '>=4.0.0'}
-
-  pg-pool@3.7.0:
-    resolution: {integrity: sha512-ZOBQForurqh4zZWjrgSwwAtzJ7QiRX0ovFkZr2klsen3Nm0aoh33Ls0fzfv3imeH/nw/O27cjdz5kzYJfeGp/g==}
-    peerDependencies:
-      pg: '>=8.0'
-
-  pg-protocol@1.7.0:
-    resolution: {integrity: sha512-hTK/mE36i8fDDhgDFjy6xNOG+LCorxLG3WO17tku+ij6sVHXh1jQUJ8hYAnRhNla4QVD2H8er/FOjc/+EgC6yQ==}
-
-  pg-types@2.2.0:
-    resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
-    engines: {node: '>=4'}
-
-  pg@8.13.1:
-    resolution: {integrity: sha512-OUir1A0rPNZlX//c7ksiu7crsGZTKSOXJPgtNiHGIlC9H0lO+NC6ZDYksSgBYY/thSWhnSRBv8w1lieNNGATNQ==}
-    engines: {node: '>= 8.0.0'}
-    peerDependencies:
-      pg-native: '>=3.0.1'
-    peerDependenciesMeta:
-      pg-native:
-        optional: true
-
-  pgpass@1.0.5:
-    resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
-
-  picocolors@1.1.0:
-    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
-=======
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
->>>>>>> Stashed changes
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -5145,6 +5004,10 @@ snapshots:
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
+  '@trpc/client@10.45.2(@trpc/server@10.45.2)':
+    dependencies:
+      '@trpc/server': 10.45.2
+
   '@trpc/server@10.45.2': {}
 
   '@tsconfig/node10@1.0.11': {}
@@ -6150,16 +6013,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(eslint-import-resolver-node@0.3.9)(eslint@9.17.0(jiti@1.21.6)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint@9.17.0(jiti@1.21.6)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
+      '@typescript-eslint/parser': 7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2)
       eslint: 9.17.0(jiti@1.21.6)
       eslint-import-resolver-node: 0.3.9
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(eslint@9.17.0(jiti@1.21.6)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.17.0(jiti@1.21.6)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -6170,7 +6034,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.17.0(jiti@1.21.6)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(eslint-import-resolver-node@0.3.9)(eslint@9.17.0(jiti@1.21.6))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint@9.17.0(jiti@1.21.6))
       hasown: 2.0.2
       is-core-module: 2.16.0
       is-glob: 4.0.3
@@ -6181,6 +6045,8 @@ snapshots:
       semver: 6.3.1
       string.prototype.trimend: 1.0.9
       tsconfig-paths: 3.15.0
+    optionalDependencies:
+      '@typescript-eslint/parser': 7.18.0(eslint@9.17.0(jiti@1.21.6))(typescript@5.7.2)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -7482,55 +7348,7 @@ snapshots:
       process: 0.11.10
       util: 0.10.4
 
-<<<<<<< Updated upstream
-  pathval@1.1.1: {}
-
-  peek-readable@5.2.0: {}
-
-  pg-cloudflare@1.1.1:
-    optional: true
-
-  pg-connection-string@2.7.0:
-    optional: true
-
-  pg-int8@1.0.1:
-    optional: true
-
-  pg-pool@3.7.0(pg@8.13.1):
-    dependencies:
-      pg: 8.13.1
-    optional: true
-
-  pg-protocol@1.7.0:
-    optional: true
-
-  pg-types@2.2.0:
-    dependencies:
-      pg-int8: 1.0.1
-      postgres-array: 2.0.0
-      postgres-bytea: 1.0.0
-      postgres-date: 1.0.7
-      postgres-interval: 1.2.0
-    optional: true
-
-  pg@8.13.1:
-    dependencies:
-      pg-connection-string: 2.7.0
-      pg-pool: 3.7.0(pg@8.13.1)
-      pg-protocol: 1.7.0
-      pg-types: 2.2.0
-      pgpass: 1.0.5
-    optionalDependencies:
-      pg-cloudflare: 1.1.1
-    optional: true
-
-  pgpass@1.0.5:
-    dependencies:
-      split2: 4.2.0
-    optional: true
-=======
   peek-readable@5.3.1: {}
->>>>>>> Stashed changes
 
   picocolors@1.1.1: {}
 
@@ -8399,15 +8217,7 @@ snapshots:
       possible-typed-array-names: 1.0.0
       reflect.getprototypeof: 1.0.8
 
-<<<<<<< Updated upstream
-  typedarray-to-buffer@3.1.5:
-    dependencies:
-      is-typedarray: 1.0.0
-
-  typeorm@0.3.17(mongodb@6.9.0(socks@2.8.3))(pg@8.13.1)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2)):
-=======
   typeorm@0.3.17(mongodb@6.12.0(socks@2.8.3))(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.5))(@types/node@20.17.10)(typescript@5.7.2)):
->>>>>>> Stashed changes
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -8425,14 +8235,8 @@ snapshots:
       uuid: 9.0.1
       yargs: 17.7.2
     optionalDependencies:
-<<<<<<< Updated upstream
-      mongodb: 6.9.0(socks@2.8.3)
-      pg: 8.13.1
-      ts-node: 10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.5))(@types/node@20.16.5)(typescript@5.6.2)
-=======
       mongodb: 6.12.0(socks@2.8.3)
       ts-node: 10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.5))(@types/node@20.17.10)(typescript@5.7.2)
->>>>>>> Stashed changes
     transitivePeerDependencies:
       - supports-color
 

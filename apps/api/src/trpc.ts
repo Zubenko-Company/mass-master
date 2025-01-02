@@ -9,7 +9,7 @@ import { createDatabaseConnection } from "@mass-master/db";
 
 import { ENV } from "./env.js";
 
-const db = createDatabaseConnection({});
+// const db = createDatabaseConnection({});
 
 export const createTRPCContext = async ({
   req,
@@ -31,6 +31,7 @@ export const createTRPCContext = async ({
       const user = {
         name: "admin",
       };
+
       return user;
     }
     return null;
@@ -39,7 +40,7 @@ export const createTRPCContext = async ({
 
   return {
     fastify: req.server,
-    db: await db,
+    // db: await db,
     req,
     res,
     user,

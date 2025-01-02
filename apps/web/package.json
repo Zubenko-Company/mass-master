@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@trpc/client": "^10.45.2",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.7",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
+    "@mass-master/api": "workspace:*",
     "@mass-master/eslint-config": "workspace:*",
     "@mass-master/prettier-config": "workspace:*",
     "@mass-master/tsconfig": "workspace:*",
