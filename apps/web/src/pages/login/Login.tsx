@@ -5,13 +5,19 @@ import "./Login.css";
 import { FormEvent, useState } from "react";
 
 import { trpcClient } from "../../client/client.js";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../components/context/AuthContext.js";
 
 type FormData = {
   login: string;
   password: string;
 };
 
-function Login() {
+function LoginForm() {
+  const navigate = useNavigate();
+  const { login } = useAuth()
+
+
   const [formData, setFormData] = useState<FormData>({
     login: "",
     password: "",
@@ -28,10 +34,22 @@ function Login() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submit behavior
-    const token = await trpcClient.token.token.mutate(formData);
+    e.preventDefault();
 
-    console.log(token);
+    let token = null;
+    try {
+      token = await trpcClient.token.token.mutate(formData);
+    } catch (error) {
+      console.log(error);
+    }
+
+    if (token) {
+      login(token.jwt)
+      navigate('/exercises')
+    }
+    else {
+      console.log('bad login');
+    }
   };
 
   return (
@@ -65,4 +83,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;

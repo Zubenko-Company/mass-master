@@ -1,3 +1,4 @@
+import { useAuth } from '../../components/context/AuthContext.js'
 import ExBlock from './exBlock/ExBlock.js'
 import './Exercises.css'
 import Header from './header/Header.js'
@@ -23,10 +24,14 @@ const option = [
 
 function Exercises() {
 
+    const { getToken } = useAuth()
+    console.log(getToken());
+
+
     return (
         <>
             <Header options={option} />
-            {exersesesQ.map(ex => <ExBlock exName={ex.name} value={ex.value} />)}
+            {exersesesQ.map(ex => <ExBlock key={ex.id} exName={ex.name} value={ex.value} />)}
         </>
     )
 }
