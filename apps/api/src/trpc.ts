@@ -5,11 +5,17 @@ import jwt from "jsonwebtoken";
 import SuperJSON from "superjson";
 import { ZodError } from "zod";
 
+import { Config } from "@mass-master/config";
 import { createDatabaseConnection } from "@mass-master/db";
 
 import { ENV } from "./env.js";
 
-// const db = createDatabaseConnection({});
+const db = createDatabaseConnection({
+  host: Config.DB_HOST,
+  username: Config.DB_USERNAME,
+  password: Config.DB_PASSWORD,
+  port: Config.DB_PORT,
+});
 
 export const createTRPCContext = async ({
   req,
@@ -19,7 +25,7 @@ export const createTRPCContext = async ({
     if (req.headers.authorization) {
       const token = req.headers.authorization;
 
-      const data = jwt.verify(token, ENV.jwtSecret) as {
+      const data = jwt.verify(token, Config.JWT_SECRET) as {
         exp: number;
         iat: number;
       };
@@ -43,7 +49,7 @@ export const createTRPCContext = async ({
 
   return {
     fastify: req.server,
-    // db: await db,
+    db: await db,
     req,
     res,
     user,

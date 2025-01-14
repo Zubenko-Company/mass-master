@@ -1,17 +1,39 @@
 import type { DataSourceOptions } from "typeorm";
+import pg from "pg";
 import { DataSource } from "typeorm";
 
-import { Message } from "./entities/Message.js";
-import { User } from "./entities/User.js";
+import { User } from "./entities/user.js";
+
+export const tryCatch = <T>(callback: () => T): [T, null] | [null, Error] => {
+  try {
+    return [callback(), null];
+  } catch (err) {
+    return [null, err as Error];
+  }
+};
+
+export const tryCatchAsync = async <T>(
+  callback: (() => Promise<T>) | Promise<T>,
+): Promise<[T, null] | [null, Error]> => {
+  try {
+    return callback instanceof Promise
+      ? [await callback, null]
+      : [await callback(), null];
+  } catch (err) {
+    return [null, err as Error];
+  }
+};
+
+pg.types.setTypeParser(pg.types.builtins.INT8, function (val: unknown) {
+  return Number(val);
+});
 
 const defaultDatabaseConfig = {
-  type: "mongodb",
-  database: "RuleGuideBot",
-  host: "localhost",
-  port: 27017,
+  type: "postgres",
+  database: "massmaster",
   synchronize: true,
   logging: false,
-  entities: [User, Message],
+  entities: [User],
   migrations: [],
   subscribers: [],
 } satisfies Partial<DataSourceOptions>;
@@ -24,8 +46,21 @@ interface CreateDatabaseOptions {
 }
 
 export const createDatabaseConnection = async (
-  options: Partial<CreateDatabaseOptions>,
+  options: CreateDatabaseOptions,
 ) => {
+  const client = new pg.Client({ ...options, user: options.username });
+  await client.connect();
+
+  const [, err] = await tryCatchAsync(() =>
+    client.query("CREATE DATABASE massmaster"),
+  );
+
+  if (err?.message.includes("already exists")) {
+    console.log('База "MassMaster" уже создана');
+  } else if (err) {
+    throw new Error("Ошибка при создании базы данных", { cause: err });
+  }
+
   const sourceOptions = {
     ...options,
     ...defaultDatabaseConfig,
@@ -35,7 +70,6 @@ export const createDatabaseConnection = async (
   await AppDataSource.initialize();
 
   return {
-    Mesages: Message,
-    Users: User,
+    User: User,
   };
 };

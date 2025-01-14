@@ -43,6 +43,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@mass-master/config": "workspace:*",
     "@mass-master/eslint-config": "workspace:*",
     "@mass-master/prettier-config": "workspace:*",
     "@mass-master/tsconfig": "workspace:*",

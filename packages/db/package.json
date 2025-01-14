@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
     "superjson": "2.2.1",
     "typeorm": "0.3.17",
@@ -27,6 +28,7 @@
     "@mass-master/prettier-config": "workspace:*",
     "@mass-master/tsconfig": "workspace:*",
     "@types/node": "^20.12.12",
+    "@types/pg": "^8.11.10",
     "eslint": "^9.2.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5"

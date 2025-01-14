@@ -4,9 +4,9 @@ import { findUp } from "find-up";
 const dotenvPath = await findUp(".env");
 dotenv.config({ path: dotenvPath });
 
-const jwtSecret = process.env.JWT_SECRET;
-const adminLogin = process.env.ADMIN_LOGIN;
-const adminPassword = process.env.ADMIN_PASSWORD;
+const jwtSecret = "process.env.JWT_SECRET";
+const adminLogin = "admin";
+const adminPassword = "qweqwe";
 
 if (!jwtSecret) {
   throw new Error("Bad jwt secret");
