@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from './pages/login/Login.js';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { AuthProvider } from './components/context/AuthContext.js';
+import { GuardRoute } from './components/GuardRoute.js';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,7 +14,11 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/exercises" element={<Exercises />} />
+          <Route path="/exercises" element={
+            <GuardRoute>
+              <Exercises />
+            </GuardRoute>
+          } />
           <Route path="/" element={<Exercises />} />
         </Routes>
       </BrowserRouter>

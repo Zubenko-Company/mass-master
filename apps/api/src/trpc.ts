@@ -15,7 +15,7 @@ export const createTRPCContext = async ({
   req,
   res,
 }: CreateFastifyContextOptions) => {
-  function getUserFromHeader() {
+  const getUserFromHeader = () => {
     if (req.headers.authorization) {
       const token = req.headers.authorization;
 
@@ -24,7 +24,10 @@ export const createTRPCContext = async ({
         iat: number;
       };
 
-      if (data.exp < Date.now()) {
+      const expDate = new Date(data.exp * 1000).getTime();
+      const curent = new Date().getTime();
+
+      if (expDate < curent) {
         throw new TRPCError({ code: "UNAUTHORIZED" });
       }
 
@@ -35,7 +38,7 @@ export const createTRPCContext = async ({
       return user;
     }
     return null;
-  }
+  };
   const user = getUserFromHeader();
 
   return {

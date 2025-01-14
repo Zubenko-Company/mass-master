@@ -1,3 +1,4 @@
+import { exercises } from "./router/exercises.js";
 import { messages } from "./router/messages.js";
 import { test } from "./router/test.js";
 import { token } from "./router/token.js";
@@ -6,6 +7,7 @@ import { createTRPCRouter } from "./trpc.js";
 
 export const appRouter = createTRPCRouter({
   token: createTRPCRouter(token),
+  exercises: createTRPCRouter(exercises),
 });
 
 // export type definition of API
