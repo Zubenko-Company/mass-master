@@ -47,4 +47,20 @@ export class Config {
 
     return process.env.JWT_SECRET;
   }
+
+  static get SERVER_PORT(): number {
+    if (!process.env.SERVER_PORT) {
+      throw new Error(getErrorEnvMessage("SERVER_PORT"));
+    }
+
+    return Number(process.env.SERVER_PORT);
+  }
+
+  static get SERVER_DOMAIN(): string {
+    if (!process.env.SERVER_DOMAIN) {
+      throw new Error(getErrorEnvMessage("SERVER_DOMAIN"));
+    }
+
+    return process.env.SERVER_DOMAIN;
+  }
 }

@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { TRPCError } from "@trpc/server";
 import jwt from "jsonwebtoken";
 import { z } from "zod";
@@ -5,24 +6,32 @@ import { z } from "zod";
 import { Config } from "@mass-master/config";
 
 import { User } from "../../../../packages/db/src/entities/user.js";
-import { ENV } from "../env.js";
 import { publicProcedure } from "../trpc.js";
+
+const hashString = (data: string) => {
+  return crypto.createHash("md5").update(data).digest("hex");
+};
 
 export const token = {
   token: publicProcedure
     .input(z.object({ login: z.string(), password: z.string() }))
-    .mutation(({ input }) => {
-      if (
-        input.login === ENV.adminLogin &&
-        input.password === ENV.adminPassword
-      ) {
-        const jwtSecret = Config.JWT_SECRET;
+    .mutation(async ({ input, ctx }) => {
+      const users = await ctx.db.User.findBy({ login: input.login });
 
-        const token = jwt.sign(
-          { exp: Math.floor(Date.now() / 1000) + 60 * 60 },
-          jwtSecret,
-        );
-        return { jwt: token };
+      if (users.length > 1 || !users.length) {
+        throw new TRPCError({ code: "UNAUTHORIZED" });
+      }
+
+      if (users.length) {
+        const [user] = users;
+        if (user?.password === hashString(input.password)) {
+          const jwtSecret = Config.JWT_SECRET;
+          const token = jwt.sign(
+            { exp: Math.floor(Date.now() / 1000) + 60 * 60, userId: user.id },
+            jwtSecret,
+          );
+          return { jwt: token };
+        }
       }
 
       throw new TRPCError({ code: "UNAUTHORIZED" });
@@ -36,14 +45,21 @@ export const token = {
         name: z.string().min(2),
       }),
     )
-    .mutation(({ input, ctx }) => {
+    .mutation(async ({ input, ctx }) => {
+      if ((await ctx.db.User.findBy({ name: input.name })).length) {
+        throw new TRPCError({
+          code: "BAD_REQUEST",
+          message: "name already taken",
+        });
+      }
+
       const user = new User();
 
       user.name = input.name;
       user.login = input.login;
-      user.password = input.password;
+      user.password = hashString(input.password);
 
       ctx.db.User.save(user);
-      return {};
+      return { result: "👍" };
     }),
 };

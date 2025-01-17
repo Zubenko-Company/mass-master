@@ -1,8 +1,5 @@
 import { exercises } from "./router/exercises.js";
-import { messages } from "./router/messages.js";
-import { test } from "./router/test.js";
 import { token } from "./router/token.js";
-import { users } from "./router/users.js";
 import { createTRPCRouter } from "./trpc.js";
 
 export const appRouter = createTRPCRouter({
