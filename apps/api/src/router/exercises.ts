@@ -1,3 +1,5 @@
+import { TRPCError } from "@trpc/server";
+
 import { adminProcedure } from "../trpc.js";
 
 const ex = [
@@ -15,6 +17,13 @@ const ex = [
 
 export const exercises = {
   userExercises: adminProcedure.query(async ({ ctx }) => {
-    return ex;
+    const user = await ctx.db.User.findOneBy({ id: ctx.user.userID });
+    if (!user) {
+      throw new TRPCError({ code: "UNAUTHORIZED" });
+    }
+    const stack = user.stack.;
+    console.log(stack);
+
+    return {};
   }),
 };

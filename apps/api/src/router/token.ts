@@ -27,7 +27,10 @@ export const token = {
         if (user?.password === hashString(input.password)) {
           const jwtSecret = Config.JWT_SECRET;
           const token = jwt.sign(
-            { exp: Math.floor(Date.now() / 1000) + 60 * 60, userId: user.id },
+            {
+              exp: Math.floor(Date.now() / 1000) + 60 * 60 * 2,
+              userId: user.id,
+            },
             jwtSecret,
           );
           return { jwt: token };

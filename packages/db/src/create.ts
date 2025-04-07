@@ -2,6 +2,7 @@ import type { DataSourceOptions } from "typeorm";
 import pg from "pg";
 import { DataSource } from "typeorm";
 
+import { Stack } from "./entities/stack.js";
 import { User } from "./entities/user.js";
 
 export const tryCatch = <T>(callback: () => T): [T, null] | [null, Error] => {
@@ -33,7 +34,7 @@ const defaultDatabaseConfig = {
   database: "massmaster",
   synchronize: true,
   logging: false,
-  entities: [User],
+  entities: [User, Stack],
   migrations: [],
   subscribers: [],
 } satisfies Partial<DataSourceOptions>;
@@ -71,5 +72,6 @@ export const createDatabaseConnection = async (
 
   return {
     User: User,
+    Stack: Stack,
   };
 };

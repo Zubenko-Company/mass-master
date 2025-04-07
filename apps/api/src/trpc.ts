@@ -28,6 +28,7 @@ export const createTRPCContext = async ({
       const data = jwt.verify(token, Config.JWT_SECRET) as {
         exp: number;
         iat: number;
+        userId: number;
       };
 
       const expDate = new Date(data.exp * 1000).getTime();
@@ -38,7 +39,7 @@ export const createTRPCContext = async ({
       }
 
       const user = {
-        name: "admin",
+        userID: data.userId,
       };
 
       return user;

@@ -1,4 +1,13 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+
+import { Stack } from "./stack.js";
 
 @Entity()
 export class User extends BaseEntity {
@@ -13,4 +22,8 @@ export class User extends BaseEntity {
 
   @Column()
   password: string;
+
+  @OneToMany(() => Stack, (st) => st.userId)
+  @JoinColumn()
+  stack: Stack[];
 }
