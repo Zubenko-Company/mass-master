@@ -1,3 +1,9 @@
 export const StatisticPage = () => {
-    return <h1>Statistic</h1>
+    return <div>
+        <h1>Statistic</h1>
+        <div>
+            <h3>Name</h3>
+            <p>10 x 4</p>
+        </div>
+    </div>
 }

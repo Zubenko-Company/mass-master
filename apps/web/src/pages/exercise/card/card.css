@@ -1,0 +1,28 @@
+.exercise-image {
+  border-radius: 25%;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.exercise-card {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 110px 100px 100px;
+  border-radius: 15px;
+  width: 350px;
+  height: 120px;
+  padding: 5px;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.exercise-info * {
+  margin: 0;
+  padding: 0;
+}
