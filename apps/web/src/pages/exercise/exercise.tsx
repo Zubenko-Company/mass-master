@@ -1,26 +1,12 @@
 import { ExerciseCard } from "./card/card.js"
-import defImage from "../../assets/images/default.png"
+import image from "../../assets/images/default.png"
 import "./exercise.css"
+import { ex1, ex2 } from "../../testData/exercises.js"
 
-const testprop = {
-    title: "Присяд",
-    image: defImage,
-    sets: 4,
-    reps: 10,
-    weight: 20
-}
-
-const testprop2 = {
-    title: "лежать",
-    image: defImage,
-    sets: 4,
-    reps: 10,
-    weight: 20
-}
 
 export const ExercisePage = () => {
     return <div className="exercise-page">
-            <ExerciseCard key={testprop.title} {...testprop} />
-            <ExerciseCard key={testprop2.title} {...testprop2} />
+        <ExerciseCard key={ex1.title} {...ex1} image={image} />
+        <ExerciseCard key={ex2.title} {...ex2} image={image} />
     </div>
 }
