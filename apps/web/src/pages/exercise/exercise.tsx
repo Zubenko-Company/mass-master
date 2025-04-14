@@ -1,18 +1,43 @@
-import { ExerciseCard } from "./card/card.js"
-import image from "../../assets/images/default.png"
-import "./exercise.css"
-import { testExercises } from "../../testData/exercises.js"
+import image from "../../assets/images/default.png";
+import { ExerciseCard } from "./card/card.js";
 
+import "./exercise.css";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import PageContent from "../../components/pageContent/pageContent.js";
+import { testExercises } from "../../testData/exercises.js";
+import CarouselItem from "./carouselItem/carouselItem.js";
+// Import Swiper styles
+import "swiper/css";
+import { recomendationsData } from "../../testData/recomendations.js";
+import woman from "../../assets/images/woman.png"
 
 export const ExercisePage = () => {
-    return <>
-        <div className="greeting">
-            <p>Доброе утро</p>
-            <h1>Антон Зубенко</h1>
-        </div>
-        <h2>Занятия на сегодня</h2>
-        <div className="exercise-page">
-            {testExercises.map(ex => <ExerciseCard key={ex.id} {...ex} image={image} />)}
-        </div>
-    </>
-}
+    return (
+        <PageContent>
+            <div className="greeting">
+                <p>Доброе утро,</p>
+                <h1>Антон Зубенко</h1>
+            </div>
+            <h2>Популярные курсы</h2>
+            <Swiper spaceBetween={150} slidesPerView={1}>
+                {recomendationsData.map(rec => <SwiperSlide>
+                    <CarouselItem {...rec} image={woman} />
+                </SwiperSlide>)}
+            </Swiper>
+
+            <h2>Занятия на сегодня</h2>
+            <div className="exercises">
+                {testExercises.map((ex) => (
+                    <ExerciseCard key={ex.id} {...ex} image={image} />
+                ))}
+            </div>
+        </PageContent>
+    );
+};
+
+// <h2 className="item-name">Lower Body Training</h2>
+// <p><BsFire /> <span>500 кал</span></p >
+// <p><BsFillStopwatchFill /> 50 мин</p>

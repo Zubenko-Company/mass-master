@@ -159,6 +159,9 @@ importers:
       react-router:
         specifier: ^7.1.1
         version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      swiper:
+        specifier: ^11.2.6
+        version: 11.2.6
     devDependencies:
       '@eslint/js':
         specifier: ^9.15.0
@@ -3800,6 +3803,10 @@ packages:
 
   swc@1.0.11:
     resolution: {integrity: sha512-YbG4eija7g/ajQ0lu4P2WPgKt5zCm743VgKn+buBrXXo1IETftO2r/8VdBPhv8wpTyg3CO+VU1z2wHuL4iohmw==}
+
+  swiper@11.2.6:
+    resolution: {integrity: sha512-8aXpYKtjy3DjcbzZfz+/OX/GhcU5h+looA6PbAzHMZT6ESSycSp9nAjPCenczgJyslV+rUGse64LMGpWE3PX9Q==}
+    engines: {node: '>= 4.7.0'}
 
   text-hex@1.0.0:
     resolution: {integrity: sha512-uuVGNWzgJ4yhRaNSiubPY7OjISw4sw4E5Uv0wbjp+OzcbmVU/rsT8ujgcXJhn9ypzsgr5vlzpPqP+MBBKcGvbg==}
@@ -8027,6 +8034,8 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
       - chokidar
+
+  swiper@11.2.6: {}
 
   text-hex@1.0.0: {}
 
