@@ -37,7 +37,3 @@ export const ExercisePage = () => {
         </PageContent>
     );
 };
-
-// <h2 className="item-name">Lower Body Training</h2>
-// <p><BsFire /> <span>500 кал</span></p >
-// <p><BsFillStopwatchFill /> 50 мин</p>
