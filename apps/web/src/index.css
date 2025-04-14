@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "FiraCode-Regular";
+  font-family: "Roboto-Light";
   font-style: normal;
   font-weight: normal;
-  src: url("assets/fonts/FiraCode-Regular.ttf") format("truetype");
+  src: url("assets/fonts/Roboto-Light.ttf") format("truetype");
 }
 
 :root {
@@ -24,5 +24,13 @@ body {
 
 * {
   /* font-family: 'FiraCode-Regular'; */
-  font-family: "FiraCode-Regular", "Courier New", Courier, monospace !important;
+  font-family: "Roboto-Light", "Courier New", Courier, monospace !important;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }

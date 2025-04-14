@@ -15,11 +15,12 @@
 }
 
 .nav-link {
-  max-width: 100px;
   text-decoration: none;
+  padding: 10px;
+
   color: #ffffff;
   font-weight: 500;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   border-radius: 20px;
   z-index: 1;
   /* transition: all 0.3s ease; */
@@ -28,12 +29,20 @@
 .active-indicator {
   position: absolute;
   top: 8px;
-  left: 0;
   height: 50px;
   background: #bbf246; /* Красный фон */
   border-radius: 20px;
   z-index: 0;
   transition: all 0.3s ease; /* Плавное перемещение */
+}
+
+.nav-content {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-content span {
+  font-size: 15px;
 }
 
 /* Пример кастомизации */
@@ -52,12 +61,11 @@ svg {
   color: black;
 }
 
-span span {
+.buttonName {
   display: none;
-  width: 0;
+  margin-left: 10px;
 }
 
-.active span span {
-  display: inline;
-  width: 0;
+.active span {
+  display: inline !important;
 }
