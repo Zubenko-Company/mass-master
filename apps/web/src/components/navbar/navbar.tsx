@@ -25,19 +25,22 @@ export default function BottomNavbar() {
     const location = useLocation();
     const indicatorRef = useRef<HTMLDivElement>(null);
     const linksRef = useRef<HTMLAnchorElement[]>([]);
-    const [activeButton, setActiveButton] = useState('')
+    // const [activeButton, setActiveButton] = useState('')
 
     useEffect(() => {
         const button = buttons.find(button => button.href === location.pathname)
         if (button) {
-            setActiveButton(button.href)
-            const activeLink = linksRef.current.find(
-                link => link.getAttribute('href') === location.pathname
-            );
-            if (activeLink && indicatorRef.current) {
-                const { offsetLeft, offsetWidth } = activeLink;
-                indicatorRef.current.style.left = `${offsetLeft}px`;
-                indicatorRef.current.style.width = `${offsetWidth}px`;
+
+            if (indicatorRef.current) {
+                const activeLink = linksRef.current.find(
+                    link => link.getAttribute('href') === location.pathname
+                );
+                if (activeLink) {
+                    const { offsetLeft, offsetWidth } = activeLink;
+                    indicatorRef.current.style.left = `${offsetLeft}px`;
+                    indicatorRef.current.style.width = `${offsetWidth}px`;
+                }
+
             }
         }
     }, [location]);
@@ -45,7 +48,16 @@ export default function BottomNavbar() {
     return (
         <nav className="bottom-nav">
             {buttons.map((button, index) => {
-                const className = activeButton === button.href ? "nav-link nav-link-active" : "nav-link";
+                let className = "nav-link";
+                if (location.pathname === button.href) {
+                    className = "nav-link nav-link-active"
+                } else {
+                    if (indicatorRef.current) {
+                        indicatorRef.current.style.left = `0px`;
+                        indicatorRef.current.style.width = `0px`;
+                    }
+                }
+
                 return <NavLink to={button.href} className={className} ref={el => { linksRef.current[index] = el }} >
                     <div className="nav-content">{button.icon} <span className="buttonName">{button.name}</span></div>
                 </NavLink>
