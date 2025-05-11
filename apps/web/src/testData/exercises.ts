@@ -20,4 +20,18 @@ export const testExercises = [
     reps: 10,
     weight: 20,
   },
+  {
+    id: 4,
+    title: "Прыгать",
+    sets: 4,
+    reps: 10,
+    weight: 20,
+  },
+  {
+    id: 5,
+    title: "Прыгать",
+    sets: 4,
+    reps: 10,
+    weight: 20,
+  },
 ];

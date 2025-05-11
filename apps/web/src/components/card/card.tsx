@@ -1,4 +1,5 @@
 import "./card.css"
+// import { BsFillPencilFill } from "react-icons/bs";
 
 type ExerciseCardProps = {
     title: string;
@@ -22,5 +23,6 @@ export const ExerciseCard = ({ title, image, reps, sets, weight }: ExerciseCardP
                 <p>{weight} кг</p>
             </div>
         </div>
+        {/* <button className="editButton"><BsFillPencilFill size={'2em'} /></button> */}
     </div>
 }

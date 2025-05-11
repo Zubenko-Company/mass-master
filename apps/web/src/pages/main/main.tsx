@@ -23,7 +23,7 @@ export const MainPage = () => {
                 <h1>Антон Зубенко</h1>
             </div>
             <h2>Популярные курсы</h2>
-            <Swiper spaceBetween={150} slidesPerView={1}>
+            <Swiper spaceBetween={150} slidesPerView={1} >
                 {recomendationsData.map(rec => <SwiperSlide>
                     <CarouselItem {...rec} image={woman} />
                 </SwiperSlide>)}

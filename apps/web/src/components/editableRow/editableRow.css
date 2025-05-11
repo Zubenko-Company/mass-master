@@ -1,0 +1,12 @@
+.editable-row {
+  font-size: 24px;
+  display: grid;
+  grid-template-columns: 160px 90px 60px;
+  margin-bottom: 20px;
+}
+
+.row-value {
+  width: 90px;
+  font-size: 20px;
+  border: none;
+}

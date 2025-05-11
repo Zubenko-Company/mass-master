@@ -16,6 +16,6 @@
     "strict": true,
     "noEmit": true
   },
-  "include": ["src"],
+  "include": ["src", "typescript"],
   "exclude": ["node_modules", "dist"]
 }

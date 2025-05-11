@@ -1,0 +1,12 @@
+.exercise-banner {
+  border-radius: 15px;
+  width: 100%;
+  max-height: 250px;
+  color: white;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.ex-name{
+    text-align: center;
+}

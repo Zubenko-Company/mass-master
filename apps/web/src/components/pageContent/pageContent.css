@@ -2,6 +2,7 @@
 @media (max-width: 767.98px) {
   .pageContent {
     /* border: 1px solid red; */
+    margin-bottom: 80px;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 10px;
@@ -12,6 +13,7 @@
   .pageContent {
     max-width: 700px;
     margin: 0 auto;
+    margin-bottom: 80px;
     /* border: 1px solid red; */
   }
 }
