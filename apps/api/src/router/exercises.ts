@@ -21,8 +21,8 @@ export const exercises = {
     if (!user) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
-    const stack = user.stack.;
-    console.log(stack);
+    // const stack = user.stack.;
+    // console.log(stack);
 
     return {};
   }),

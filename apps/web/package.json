@@ -20,6 +20,7 @@
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@mass-master/api": "workspace:*",
+    "@mass-master/config": "workspace:*",
     "@mass-master/eslint-config": "workspace:*",
     "@mass-master/prettier-config": "workspace:*",
     "@mass-master/tsconfig": "workspace:*",

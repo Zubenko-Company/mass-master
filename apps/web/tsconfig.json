@@ -1,5 +1,5 @@
 {
-  // "extends": "@mass-master/tsconfig/base.json",
+  "extends": "@mass-master/tsconfig/base.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable"],
     "jsx": "react-jsx",

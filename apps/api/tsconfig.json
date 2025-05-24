@@ -1,6 +1,7 @@
 {
   "extends": "@mass-master/tsconfig/base.json",
   "compilerOptions": {
+    "strictPropertyInitialization": false,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,7 +13,7 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

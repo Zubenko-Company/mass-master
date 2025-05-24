@@ -23,6 +23,9 @@ export const createTRPCContext = async ({
 }: CreateFastifyContextOptions) => {
   const getUserFromHeader = () => {
     if (req.headers.authorization) {
+      console.log("hui");
+      console.log(req.headers.authorization);
+
       const token = req.headers.authorization;
 
       const data = jwt.verify(token, Config.JWT_SECRET) as {

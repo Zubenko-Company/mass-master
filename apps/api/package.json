@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "types": "tsc --noEmit",
     "dev": "nodemon --exec node --loader ts-node/esm ./src/index.ts",
     "start": "node --loader ts-node/esm ./src/index.ts",
     "clean": "rm -rf .turbo node_modules",
@@ -28,9 +29,7 @@
     "class-transformer": "^0.5.1",
     "dotenv": "^16.4.5",
     "fastify": "^4.27.0",
-    "find-up": "^7.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.9.0",
     "nodemon": "^3.1.0",
     "pino-pretty": "^11.0.0",
     "reflect-metadata": "^0.2.2",

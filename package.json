@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@mass-master/prettier-config": "workspace:*",
+    "@mass-master/tsconfig": "workspace:*",
     "@turbo/gen": "^1.13.3",
     "prettier": "^3.2.5",
     "turbo": "^1.13.3",

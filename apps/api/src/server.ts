@@ -3,8 +3,10 @@ import helmet from "@fastify/helmet";
 import sensible from "@fastify/sensible";
 import ws from "@fastify/websocket";
 import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
-import fastify from "fastify";
+import fastify, { FastifyListenOptions } from "fastify";
+import SuperJSON from "superjson";
 import { renderTrpcPanel } from "trpc-panel";
+import { transformer } from "zod";
 
 import { appRouter } from "./root.js";
 import { createTRPCContext } from "./trpc.js";
@@ -22,7 +24,11 @@ import { createTRPCContext } from "./trpc.js";
     .register(fastifyTRPCPlugin, {
       prefix: "/trpc",
       useWSS: true,
-      trpcOptions: { router: appRouter, createContext: createTRPCContext },
+      trpcOptions: {
+        router: appRouter,
+        createContext: createTRPCContext,
+        transformer: SuperJSON,
+      },
     })
     .register(cors, { origin: "*", credentials: true })
     .register(helmet);
@@ -39,7 +45,7 @@ import { createTRPCContext } from "./trpc.js";
       );
   });
 
-  const options: fastify.FastifyListenOptions = { port: 1337 };
+  const options: FastifyListenOptions = { port: 1337 };
 
   void app.listen(options);
 })();
